@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './_shared/modules/material.module';
 import { GlassCardComponent } from './_shared/components/glass-card/glass-card.component';
 import { WeatherComponent } from './_shared/components/weather/weather.component';
+import { FortAwesomeModule } from './_shared/modules/fortawesome.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { WeatherComponent } from './_shared/components/weather/weather.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FortAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
