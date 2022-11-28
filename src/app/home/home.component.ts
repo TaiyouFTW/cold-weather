@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GeoCoordinates } from '../_shared/interfaces/geo-coordinates';
+import { GeoLocationService } from '../_shared/services/geo-location.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  coordinates: GeoCoordinates = {} as GeoCoordinates;
+
+  constructor(private geoLocationService: GeoLocationService) { }
 
   ngOnInit(): void {
+    this.geoLocationService.get().subscribe(position => {
+      this.coordinates.latitude = position.latitude;
+      this.coordinates.longitude = position.longitude;
+    });
   }
 
 }
