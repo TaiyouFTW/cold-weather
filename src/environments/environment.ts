@@ -3,9 +3,21 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url: 'https://api.open-meteo.com/v1/forecast'
 };
 
+// https://api.open-meteo.com/v1/forecast?latitude=-23.69&longitude=-46.56&current_weather=true&timezone=America%2FSao_Paulo
+/*
+https://api.open-meteo.com/v1/forecast?
+timezone=America%2FSao_Paulo
+&latitude=41.15
+&longitude=-8.61
+&hourly=temperature_2m
+&current_weather=true
+&start_date=2022-11-28
+&end_date=2022-11-28
+*/
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
