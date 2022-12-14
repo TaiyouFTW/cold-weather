@@ -8,8 +8,10 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 12px;
-  background-color: $e7-background;
-  color: $e7-text;
+  background-color: #f6f6f6;
+
+  background: radial-gradient(circle, $weather-background 10%, $weather-background 100%);
+  color: $weather-text;
 }
 
 h1,
@@ -18,8 +20,16 @@ h3,
 h4,
 h5,
 h6 {
-  color: $e7-text;
+  color: $weather-text;
   font-weight: bold;
+}
+
+p {
+  font-size: 1rem;
+}
+
+small {
+  color: darken($weather-text, 15%);
 }
 
 @media (min-width: 768px) {
