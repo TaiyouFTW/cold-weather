@@ -1,1 +1,10 @@
-<p>weather works!</p>
+<div class="glass d-flex flex-column justify-content-center align-items-center">
+    <div class="flex-fill d-flex flex-column justify-content-center">
+        <p class="m-0">Today,</p>
+        <h1 class="text-center m-0" *ngIf="forecast && forecast.current_weather">{{forecast.current_weather.temperature}} {{forecast.hourly_units.temperature_2m}}</h1>
+        <small>At your location.</small>
+    </div>
+    <div>
+        <fa-icon class="icon" [icon]="['fas', 'sun']" [fixedWidth]="true"></fa-icon>
+    </div>
+</div>

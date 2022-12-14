@@ -1,0 +1,41 @@
+@import "./../../../../colors.scss";
+
+.glass {
+    height: 250px;
+    width: 100%;
+    background: $weather-foreground;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.glass-content {
+    height: 150px;
+}
+.glass-footer {
+    height: 100px;
+}
+
+.icon {
+    color: rgba(77, 171, 247, 0.75);
+    font-size: 4rem;
+}
+
+.clear-sky {
+    color: red;
+}
+
+.partly-cloudy {
+    color: red;
+}
+
+.fog {
+    color: red;
+}
+
+.drizzle {
+    color: red;
+}
+
+.freezing-drizzle {
+    color: red;
+}

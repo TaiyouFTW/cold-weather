@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GeoCoordinates } from '../_shared/interfaces/geo-coordinates';
+import { Forecast } from '../_shared/interfaces/forecast';
 import { GeoLocationService } from '../_shared/services/geo-location.service';
+import { ForecastService } from '../_shared/services/forecast.service';
 
 @Component({
   selector: 'app-home',
@@ -9,14 +10,27 @@ import { GeoLocationService } from '../_shared/services/geo-location.service';
 })
 export class HomeComponent implements OnInit {
 
-  coordinates: GeoCoordinates = {} as GeoCoordinates;
+  forecast: Forecast = {} as Forecast;
+  today: Date = new Date();
 
-  constructor(private geoLocationService: GeoLocationService) { }
+  constructor(
+    private geoLocationService: GeoLocationService,
+    private forecastService: ForecastService
+  ) { }
 
   ngOnInit(): void {
+    this.geoPosition();
+  }
+
+  geoPosition() {
     this.geoLocationService.get().subscribe(position => {
-      this.coordinates.latitude = position.latitude;
-      this.coordinates.longitude = position.longitude;
+      this.weatherByCoordinates(position.latitude, position.longitude);
+    });
+  }
+
+  weatherByCoordinates(lat: number, long: number) {
+    this.forecastService.byCoordinates(lat, long).subscribe(todayWeather => {
+      this.forecast = todayWeather;
     });
   }
 
