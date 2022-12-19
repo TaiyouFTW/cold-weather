@@ -7,7 +7,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
     if (req.method === 'GET') {
         request(
-            'https://api.open-meteo.com/v1/forecast',
+            'https://api.open-meteo.com/v1/forecast' + req.query,
             {
                 method: 'GET',
             }, (error, response, body) => {
