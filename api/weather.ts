@@ -6,6 +6,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     if (req.method === 'GET') {
+        console.log(req.query);
         request(
             'https://api.open-meteo.com/v1/forecast' + req.query,
             {
