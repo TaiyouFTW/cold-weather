@@ -10,7 +10,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
             'https://api.open-meteo.com/v1/forecast',
             {
                 method: 'GET',
-            }, (error: any, response: any, body: any) => {
+            }, (error, response, body) => {
                 if (response.statusCode == 200) {
                     res.status(200).send(response.body);
                 } else {
