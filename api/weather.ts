@@ -14,7 +14,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
                 if (response.statusCode == 200) {
                     res.status(200).send(response.body);
                 } else {
-                    res.status(response.statusCode).send(error.message);
+                    res.status(response.statusCode).send("an error has occurred");
                 }
             }
         );
