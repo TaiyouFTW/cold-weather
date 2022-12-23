@@ -4,10 +4,10 @@
         <h1 class="text-center m-0" *ngIf="forecast && forecast.current_weather">{{forecast.current_weather.temperature}} {{forecast.hourly_units.temperature_2m}}</h1>
         <small>At your location.</small>
         <small class="d-flex justify-content-between">
-            <span>
+            <span matTooltip="Wind speed">
                 <fa-icon [icon]="['fas', 'wind']" [fixedWidth]="true"></fa-icon> {{forecast.current_weather.windspeed}}Km/h
             </span>
-            <span>
+            <span matTooltip="Precipitation">
                 <fa-icon [icon]="['fas', 'tint']" [fixedWidth]="true"></fa-icon> {{forecast.hourly.precipitation[hour]}}{{forecast.hourly_units.precipitation}}
             </span>
         </small>
