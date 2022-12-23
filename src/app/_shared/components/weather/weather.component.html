@@ -1,10 +1,18 @@
-<div class="glass d-flex flex-column justify-content-center align-items-center">
+<div class="glass d-flex flex-column justify-content-center align-items-center p-3">
     <div class="flex-fill d-flex flex-column justify-content-center">
         <p class="m-0">Today,</p>
         <h1 class="text-center m-0" *ngIf="forecast && forecast.current_weather">{{forecast.current_weather.temperature}} {{forecast.hourly_units.temperature_2m}}</h1>
         <small>At your location.</small>
+        <small class="d-flex justify-content-between">
+            <span>
+                <fa-icon [icon]="['fas', 'wind']" [fixedWidth]="true"></fa-icon> {{forecast.current_weather.windspeed}}Km/h
+            </span>
+            <span>
+                <fa-icon [icon]="['fas', 'tint']" [fixedWidth]="true"></fa-icon> {{forecast.hourly.precipitation[hour]}}{{forecast.hourly_units.precipitation}}
+            </span>
+        </small>
     </div>
     <div>
-        <fa-icon class="icon" [icon]="['fas', 'sun']" [fixedWidth]="true"></fa-icon>
+        <fa-icon class="icon" [icon]="['fas', getIcon()]" [fixedWidth]="true"></fa-icon>
     </div>
 </div>
